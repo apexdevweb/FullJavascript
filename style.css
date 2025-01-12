@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: "Playwrite AU SA", serif;
+}
+header,
+nav,
+ul {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 3px 5px #000;
+}
+ul {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+h1 {
+  z-index: 2;
+  position: absolute;
+  font-family: "Playwrite AU SA", serif;
+  font-size: 9.5rem;
+  text-align: center;
+  mix-blend-mode: overlay;
+  color: #fff;
+  font-weight: 800;
+}
+h2 {
+  text-decoration: underline;
+}
+video {
+  position: absolute;
+  margin-top: -550px;
+  clip: text;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: #000;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.mainContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+}
+.carte {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 2px;
+  margin: 25px;
+  height: 30vh;
+  width: 45vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #000;
+  overflow: hidden;
+}
+.blckA,
+.blckB {
+  height: auto;
+  max-width: 27vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+}
+
+.carteblckTxt {
+  margin: 0;
+  height: 13vh;
+  width: 18vw;
+  background-color: rgb(182, 182, 182);
+  overflow: hidden;
+}
+.paraTxt {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 25ch;
+  margin: 0;
+}
+hr {
+  align-items: center;
+  height: 28vh;
+  width: 2px;
+  background-color: #000;
+  border: none;
+}
+figure {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 25vw;
+  background-color: red;
+  border-radius: 10px;
+}
+img {
+  height: 23vh;
+  width: 25vw;
+  border-radius: 10px;
+}
+figcaption {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 1rem;
+}
