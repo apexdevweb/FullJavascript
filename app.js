@@ -13,3 +13,33 @@ linksNav.forEach((liens) => {
     liens.style.letterSpacing = "0";
   });
 });
+//bouttons article
+
+const btnviewer = document.querySelectorAll(".btnV");
+const artclStyleParams = document.querySelectorAll(".carte");
+const imgStyleParams = document.querySelectorAll("img");
+btnviewer.forEach((buttonView, index) => {
+  const imgModif = imgStyleParams[index];
+  const paramsArtcl = artclStyleParams[index]; // Associe chaque bouton à sa carte correspondante
+  if ((paramsArtcl, imgModif)) {
+    buttonView.addEventListener("mouseover", () => {
+      paramsArtcl.classList.add("modifArtcl");
+      imgModif.classList.add("modifImg");
+    });
+    buttonView.addEventListener("click", () => {
+      if (paramsArtcl.classList.contains("expensionModal")) {
+        paramsArtcl.classList.remove("expensionModal");
+        imgModif.classList.remove("expensionImg");
+      } else {
+        paramsArtcl.classList.add("expensionModal");
+        imgModif.classList.add("expensionImg");
+      }
+    });
+    buttonView.addEventListener("mouseout", () => {
+      paramsArtcl.classList.remove("modifArtcl");
+      imgModif.classList.remove("modifImg");
+    });
+  }
+});
+
+//mécanique bouttons pour l'expension

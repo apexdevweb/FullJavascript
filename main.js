@@ -15,6 +15,7 @@ vidBg.controls = false;
 vidBg.autoplay = true;
 vidBg.loop = true;
 vidBg.muted = true;
+vidBg.setAttribute("class", "headerVid");
 tagHeader.appendChild(vidBg);
 //Inclusion du text dans le h1
 tagH1.appendChild(h1Txt);
@@ -76,6 +77,11 @@ for (let i = 0; i < h2Article.length; i++) {
   blockQteMain.appendChild(pgrhfMain);
   pgrhfMain.textContent =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora doloribus ullam deleniti commodisoluta distinctio molestiae iusto atque quod?";
+  let btnView = document.createElement("button");
+  btnView.setAttribute("class", "btnV");
+  let btnViewTxt = document.createTextNode("View");
+  btnView.appendChild(btnViewTxt);
+  ctnrA.appendChild(btnView);
   let figureMain = document.createElement("figure");
   ctnrB.appendChild(figureMain);
   const imgTab = [
@@ -85,54 +91,32 @@ for (let i = 0; i < h2Article.length; i++) {
     "image/papper4.jpg",
   ];
   let imgFig = document.createElement("img");
-  for (let i = 0; i < imgTab.length; i++) {
-    imgFig.src = imgTab[i];
-    imgFig.alt = "myImg";
-    figureMain.appendChild(imgFig);
-  }
-  let today = new Date();
+  imgFig.src = imgTab[i];
+  imgFig.alt = "myImg";
+  figureMain.appendChild(imgFig);
   let captionFig = document.createElement("figcaption");
-  let captionTxt = document.createTextNode(today);
+  let captionTxt = document.createTextNode("Lorem ipsum dolor sit amet.");
   captionFig.appendChild(captionTxt);
   figureMain.appendChild(captionFig);
 }
 /////////////////////MAIN FIN/////////////////////////
-
-// let link = document.createElement("a");
-// link.id = "liens";
-// link.href = "index.html";
-// let linkTxt = document.createTextNode("Retour à l'index");
-// container.appendChild(link).innerHTML = "<br>".repeat(2);
-// link.appendChild(linkTxt);
-// let linkClone = link.cloneNode(true);
-// linkClone.setAttribute("class", "clnLink");
-// container.appendChild(linkClone);
-// let MyLinks = [link, linkClone];
-// MyLinks.forEach((lkns) => {
-//   lkns.addEventListener("mouseover", () => {
-//     lkns.style.textDecoration = "underline";
-//   });
-//   lkns.addEventListener("mouseout", () => {
-//     lkns.style.textDecoration = "none";
-//   });
-// });
-
-// let para = document.createElement("p");
-// para.setAttribute("class", "myPara");
-// container.appendChild(para);
-// let paraTxt = document.createTextNode(
-//   "à but non-lucratif chargé de promouvoir la compatibilité des technologies du"
-// );
-// para.appendChild(paraTxt);
-
-// let remplacement = () => {
-//   let remplace = document.createTextNode("Remplacer!!! a but lucratif");
-//   paraTxt.replaceWith(remplace);
-// };
-
-// let btn = document.createElement("button");
-// btn.setAttribute("id", "Remplacer");
-// btn.textContent = "Remplacer";
-// container.appendChild(btn);
-// btn.onclick = remplacement();
-// console.log(btn);
+///FOOTER////
+const tagFoot = document.querySelector("footer");
+let vidBgFoot = document.createElement("video");
+vidBgFoot.src = "image/vidOne.mp4";
+vidBgFoot.controls = false;
+vidBgFoot.autoplay = true;
+vidBgFoot.loop = true;
+vidBgFoot.muted = true;
+vidBgFoot.setAttribute("class", "footVid");
+tagFoot.appendChild(vidBgFoot);
+let signature = document.createElement("h4");
+let signTxt = document.createTextNode("©Script'enjoyer 2025");
+signature.appendChild(signTxt);
+tagFoot.appendChild(signature);
+let today = new Date();
+let smalldate = document.createElement("small");
+let dateInfo = document.createTextNode(today);
+smalldate.appendChild(dateInfo);
+tagFoot.appendChild(smalldate);
+///FOOTER FIN////
