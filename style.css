@@ -235,6 +235,17 @@ input[type="submit"]:hover {
   background-color: #fff;
   color: burlywood;
 }
+.info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  height: auto;
+  width: 100%;
+}
 /*expension add js*/
 .expensionModal {
   display: flex;

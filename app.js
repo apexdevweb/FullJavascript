@@ -20,11 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgStyleParams = document.querySelectorAll("img");
   const blckAStyleParams = document.querySelectorAll(".blckA");
   const dteCtnrParams = document.querySelectorAll(".dteContainer");
+  const dteInfoParams = document.querySelectorAll(".info");
   btnviewer.forEach((buttonView, index) => {
     const imgModif = imgStyleParams[index];
     const paramsArtcl = artclStyleParams[index]; // Associe chaque bouton à sa carte correspondante
     const paramsBlck = blckAStyleParams[index];
     const dateContainer = dteCtnrParams[index];
+    const dateInfoContainer = dteInfoParams[index];
     if ((paramsArtcl, imgModif)) {
       buttonView.addEventListener("mouseover", () => {
         paramsArtcl.classList.add("modifArtcl");
@@ -37,11 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
           imgModif.classList.remove("expensionImg");
           paramsBlck.classList.remove("expensionTxt");
           dateContainer.classList.remove("apparition");
+          dateInfoContainer.classList.remove("info");
         } else {
           paramsArtcl.classList.add("expensionModal");
           imgModif.classList.add("expensionImg");
           paramsBlck.classList.add("expensionTxt");
           dateContainer.classList.add("apparition");
+          dateInfoContainer.classList.add("info");
         }
       });
 

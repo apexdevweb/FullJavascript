@@ -1,14 +1,10 @@
 //body
 const tagBody = document.querySelector("body");
 /////////////////////HEADER & NAV/////////////////////////
-//header
 const tagHeader = document.querySelector("header");
-//titre principale h1
 let tagH1 = document.createElement("h1");
 let h1Txt = document.createTextNode("Full Javascript website");
-//Inclusion du titre h1 dans le header
 tagHeader.appendChild(tagH1);
-//création d'une balise vidéo qui sera utilisé pour le font du h1
 let vidBg = document.createElement("video");
 vidBg.src = "image/vidTwo.mp4";
 vidBg.controls = false;
@@ -17,33 +13,21 @@ vidBg.loop = true;
 vidBg.muted = true;
 vidBg.setAttribute("class", "headerVid");
 tagHeader.appendChild(vidBg);
-//Inclusion du text dans le h1
 tagH1.appendChild(h1Txt);
-//nav barre
 let tagNav = document.createElement("nav");
-//Inclusion de la navbarre dans le header
 tagHeader.appendChild(tagNav);
-//unorderlist
 let tagUl = document.createElement("ul");
-//Inclusion de l'unorderlist' dans la navBarre
 tagNav.appendChild(tagUl);
-//liste à puce
-//tableau avec les noms des liens
 const namesOfLink = ["Home", "Gallery", "Contact"];
-//boucle for pour parcourire le tableaux et généré des "li" pour chaque element du tableaux
 for (let i = 0; i < namesOfLink.length; i++) {
   let tagLi = document.createElement("li");
-  //Inclusion des listes a puces dans l'unorderlist'
+
   tagUl.appendChild(tagLi);
-  //liens navbarre
   let tagLink = document.createElement("a");
-  //on lui définie un attribut "href" avec une url qui se base sur l'index
   tagLink.href = `#page${i + 1}`;
 
   let linkTxt = document.createTextNode(namesOfLink[i]);
-  //Inclusion des liens dans les listes à puces
   tagLi.appendChild(tagLink);
-  //Inclusion des textes dans les liens de la  liste a puces
   tagLink.appendChild(linkTxt);
 }
 /////////////////////HEADER & NAV FIN/////////////////////////
@@ -104,21 +88,32 @@ for (let i = 0; i < h2Article.length; i++) {
   registerBtn.type = "submit";
   registerBtn.value = "Register";
   formDte.appendChild(registerBtn);
-  function dteRegister() {
-    let dteStrt = document.forms["dteFormValidate"]["dateDepart"].value;
-    let dteEnd = document.forms["dteFormValidate"]["dateArrive"].value;
-    if (dteStrt === "" || dteEnd === "") {
-      // console.log("choisire une date!!");
-      // return;
+  const tabStart = [];
+  const tabEnd = [];
+  function dteRegister(event) {
+    event.preventDefault();
+    let dteStrt = document.forms["dteFormValidate"]["dateDepart"].value.trim();
+    let dteEnd = document.forms["dteFormValidate"]["dateArrive"].value.trim();
+    if (dteStrt !== "" && dteEnd !== "") {
+      tabStart.push(dteStrt);
+      tabEnd.push(dteEnd);
+      console.log("Dates de début :", tabStart);
+      console.log("Dates de fin :", tabEnd);
+      for (let i = 0; i < tabStart.length && tabEnd.length; i++) {
+        let infoDate = document.createElement("p");
+        let infoDateTxt = document.createTextNode(
+          tabStart[i] + " " + tabEnd[i]
+        );
+        infoDate.setAttribute("class", "info");
+        ctnrA.appendChild(infoDate);
+        infoDate.appendChild(infoDateTxt);
+        return;
+      }
     } else {
-      let myForm = document.forms["dteFormValidate"];
-      myForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("validé");
-      });
+      alert("Veuillez remplir les deux dates !");
     }
   }
-  dteRegister();
+  formDte.addEventListener("submit", dteRegister);
   let btnView = document.createElement("button");
   btnView.setAttribute("class", "btnV");
   let btnViewTxt = document.createTextNode("View");
