@@ -18,9 +18,15 @@ linksNav.forEach((liens) => {
 const btnviewer = document.querySelectorAll(".btnV");
 const artclStyleParams = document.querySelectorAll(".carte");
 const imgStyleParams = document.querySelectorAll("img");
+const blckAStyleParams = document.querySelectorAll(".blckA");
+const dprtStyleParams = document.querySelectorAll(".depart");
+const ndStyleParams = document.querySelectorAll(".arrive");
 btnviewer.forEach((buttonView, index) => {
   const imgModif = imgStyleParams[index];
   const paramsArtcl = artclStyleParams[index]; // Associe chaque bouton à sa carte correspondante
+  const paramsBlck = blckAStyleParams[index];
+  const departparams = dprtStyleParams[index];
+  const arriveParams = ndStyleParams[index];
   if ((paramsArtcl, imgModif)) {
     buttonView.addEventListener("mouseover", () => {
       paramsArtcl.classList.add("modifArtcl");
@@ -30,9 +36,15 @@ btnviewer.forEach((buttonView, index) => {
       if (paramsArtcl.classList.contains("expensionModal")) {
         paramsArtcl.classList.remove("expensionModal");
         imgModif.classList.remove("expensionImg");
+        paramsBlck.classList.remove("expensionTxt");
+        departparams.classList.remove("apparition");
+        arriveParams.classList.remove("apparition");
       } else {
         paramsArtcl.classList.add("expensionModal");
         imgModif.classList.add("expensionImg");
+        paramsBlck.classList.add("expensionTxt");
+        departparams.classList.add("apparition");
+        arriveParams.classList.add("apparition");
       }
     });
     buttonView.addEventListener("mouseout", () => {

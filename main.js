@@ -77,8 +77,14 @@ for (let i = 0; i < h2Article.length; i++) {
   blockQteMain.appendChild(pgrhfMain);
   pgrhfMain.textContent =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora doloribus ullam deleniti commodisoluta distinctio molestiae iusto atque quod?";
-  // let pgrhfMainInfo = document.createElement("p");
-  // let pgrhfMainInfoTxt = document.createTextNode();
+  let dateStart = document.createElement("input");
+  dateStart.type = "date";
+  dateStart.setAttribute("class", "depart");
+  ctnrA.appendChild(dateStart);
+  let dateEnd = document.createElement("input");
+  dateEnd.type = "date";
+  dateEnd.setAttribute("class", "arrive");
+  ctnrA.appendChild(dateEnd);
   let btnView = document.createElement("button");
   btnView.setAttribute("class", "btnV");
   let btnViewTxt = document.createTextNode("View");
