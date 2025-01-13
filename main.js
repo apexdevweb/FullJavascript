@@ -77,6 +77,8 @@ for (let i = 0; i < h2Article.length; i++) {
   blockQteMain.appendChild(pgrhfMain);
   pgrhfMain.textContent =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora doloribus ullam deleniti commodisoluta distinctio molestiae iusto atque quod?";
+  // let pgrhfMainInfo = document.createElement("p");
+  // let pgrhfMainInfoTxt = document.createTextNode();
   let btnView = document.createElement("button");
   btnView.setAttribute("class", "btnV");
   let btnViewTxt = document.createTextNode("View");
