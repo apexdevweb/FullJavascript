@@ -52,7 +52,7 @@ const main = document.querySelector("main");
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
 main.appendChild(sectionPimary);
-const h2Article = ["Miami", "Thaïlande", "Cuba", "Hawaï"];
+const h2Article = ["Californie", "Thaïlande", "Cuba", "Hawaï"];
 for (let i = 0; i < h2Article.length; i++) {
   let articleMain = document.createElement("article");
   articleMain.setAttribute("class", "carte");
@@ -77,19 +77,53 @@ for (let i = 0; i < h2Article.length; i++) {
   blockQteMain.appendChild(pgrhfMain);
   pgrhfMain.textContent =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora doloribus ullam deleniti commodisoluta distinctio molestiae iusto atque quod?";
+  let dateContainer = document.createElement("div");
+  dateContainer.setAttribute("class", "dteContainer");
+  ctnrA.appendChild(dateContainer);
+  let formDte = document.createElement("form");
+  formDte.method = "GET";
+  formDte.name = "dteFormValidate";
+  formDte.setAttribute("class", "registerForm");
+  dateContainer.appendChild(formDte);
   let dateStart = document.createElement("input");
   dateStart.type = "date";
+  dateStart.name = "dateDepart";
   dateStart.setAttribute("class", "depart");
-  ctnrA.appendChild(dateStart);
+  let txtStart = document.createTextNode("Date de départ");
+  let txtEnd = document.createTextNode("Date d'arrivée");
+  const txtTab = [txtStart, txtEnd];
+  formDte.appendChild(txtTab[0]);
+  formDte.appendChild(dateStart);
   let dateEnd = document.createElement("input");
   dateEnd.type = "date";
+  dateEnd.name = "dateArrive";
   dateEnd.setAttribute("class", "arrive");
-  ctnrA.appendChild(dateEnd);
+  formDte.appendChild(txtTab[1]);
+  formDte.appendChild(dateEnd);
+  let registerBtn = document.createElement("input");
+  registerBtn.type = "submit";
+  registerBtn.value = "Register";
+  formDte.appendChild(registerBtn);
+  function dteRegister() {
+    let dteStrt = document.forms["dteFormValidate"]["dateDepart"].value;
+    let dteEnd = document.forms["dteFormValidate"]["dateArrive"].value;
+    if (dteStrt === "" || dteEnd === "") {
+      // console.log("choisire une date!!");
+      // return;
+    } else {
+      let myForm = document.forms["dteFormValidate"];
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("validé");
+      });
+    }
+  }
+  dteRegister();
   let btnView = document.createElement("button");
   btnView.setAttribute("class", "btnV");
   let btnViewTxt = document.createTextNode("View");
-  btnView.appendChild(btnViewTxt);
   ctnrA.appendChild(btnView);
+  btnView.appendChild(btnViewTxt);
   let figureMain = document.createElement("figure");
   ctnrB.appendChild(figureMain);
   const imgTab = [
