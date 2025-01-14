@@ -102,7 +102,7 @@ for (let i = 0; i < h2Article.length; i++) {
       for (let i = 0; i < tabStart.length && tabEnd.length; i++) {
         let infoDate = document.createElement("p");
         let infoDateTxt = document.createTextNode(
-          tabStart[i] + " " + tabEnd[i]
+          "Du" + " " + tabStart[i] + " " + "jusq'au" + " " + tabEnd[i]
         );
         infoDate.setAttribute("class", "info");
         ctnrA.appendChild(infoDate);

@@ -236,6 +236,8 @@ input[type="submit"]:hover {
   color: burlywood;
 }
 .info {
+  /*le ::content permet de ciblé le contenus*/
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -245,6 +247,7 @@ input[type="submit"]:hover {
   color: #fff;
   height: auto;
   width: 100%;
+  bottom: 0;
 }
 /*expension add js*/
 .expensionModal {

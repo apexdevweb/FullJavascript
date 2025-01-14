@@ -1,0 +1,41 @@
+// const container = document.getElementById("divTP1");
+//       let strng = document.createElement("strong");
+//       let strngTxt = document.createTextNode("World Wide Web Consortium");
+//       container.appendChild(strng);
+//       strng.appendChild(strngTxt);
+//       let link = document.createElement("a");
+//       link.id = "liens";
+//       link.href = "index.html";
+//       let linkTxt = document.createTextNode("Retour à l'index");
+//       container.appendChild(link).innerHTML = "<br>".repeat(2);
+//       link.appendChild(linkTxt);
+//       let linkClone = link.cloneNode(true);
+//       linkClone.setAttribute("class", "clnLink");
+//       container.appendChild(linkClone);
+//       let MyLinks = [link, linkClone];
+//       MyLinks.forEach((lkns) => {
+//         lkns.addEventListener("mouseover", () => {
+//           lkns.style.textDecoration = "underline";
+//         });
+//         lkns.addEventListener("mouseout", () => {
+//           lkns.style.textDecoration = "none";
+//         });
+//       });
+
+//       let para = document.createElement("p");
+//       para.setAttribute("class","myPara");
+//       container.appendChild(para);
+//       let paraTxt =  document.createTextNode("à but non-lucratif chargé de promouvoir la compatibilité des technologies du");
+//       para.appendChild(paraTxt);
+
+//       let remplacement = () =>{
+//         let remplace = document.createTextNode("Remplacer!!! a but lucratif");
+//         paraTxt.replaceWith(remplace);
+//       };
+
+//       let btn = document.createElement("button");
+//       btn.setAttribute("id","Remplacer");
+//       btn.textContent = "Remplacer";
+//       container.appendChild(btn);
+//       btn.onclick = remplacement();
+//       console.log(btn);
