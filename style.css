@@ -296,7 +296,7 @@ input[type="submit"]:hover {
   from {
     opacity: 0;
     transform: translateX(400px);
-    height: 23vh;
+    height: 0;
     width: 25vw;
   }
   to {
