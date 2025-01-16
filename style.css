@@ -32,6 +32,9 @@ ul {
   align-items: center;
 }
 h1 {
+  margin-top: 0;
+  height: 20vh;
+  width: auto;
   z-index: 2;
   position: absolute;
   font-family: "Playwrite AU SA", serif;
@@ -59,6 +62,26 @@ a {
   color: #000;
   font-size: 1.3rem;
   text-decoration: none;
+}
+.infoUserBtn {
+  text-align: center;
+  margin: 5px;
+  height: 5vh;
+  width: 9vw;
+  font-size: 1.2rem;
+  font-family: "Playwrite AU SA", serif;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: transparent;
+}
+.infoUserBtn:hover {
+  cursor: pointer;
+  transition: background-color 1s ease;
+  background-color: #000;
+  color: burlywood;
+}
+.info_for_user {
+  display: none;
 }
 .mainContainer {
   display: flex;
@@ -274,6 +297,21 @@ input[type="submit"]:hover {
 .apparition {
   display: flex;
   animation: apparitionAnime 1.2s ease 0.6s 1 normal forwards;
+}
+.expensionInfo {
+  position: absolute;
+  height: 25vh;
+  background-color: #000;
+  border-radius: 10px;
+  z-index: 99;
+  font-family: "Playwrite AU SA", serif;
+  width: 25vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 5px;
+  transition: 0.5s ease-in-out;
 }
 /*expension du container*/
 @keyframes expandAnime {

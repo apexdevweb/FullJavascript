@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
       liens.style.letterSpacing = "0";
     });
   });
+  //bouton open/close
+  const opncls = document.querySelector(".infoUserBtn");
+  const infoctnr = document.querySelector(".infoForUser");
+  opncls.addEventListener("click", () => {
+    if (infoctnr.classList.contains("expensionInfo")) {
+      opncls.textContent = "View info";
+    } else {
+      opncls.textContent = "Close";
+    }
+    infoctnr.classList.toggle("expensionInfo");
+  });
+
   //bouttons article
   const btnviewer = document.querySelectorAll(".btnV");
   const artclStyleParams = document.querySelectorAll(".carte");

@@ -33,6 +33,15 @@ for (let i = 0; i < namesOfLink.length; i++) {
 /////////////////////HEADER & NAV FIN/////////////////////////
 /////////////////////MAIN/////////////////////////
 const main = document.querySelector("main");
+///////INFO PANNEL /////////
+let infoPannel = document.createElement("div");
+infoPannel.setAttribute("class", "infoForUser");
+let btnInfoPannel = document.createElement("button");
+btnInfoPannel.textContent = "View info";
+btnInfoPannel.setAttribute("class", "infoUserBtn");
+main.appendChild(btnInfoPannel);
+main.appendChild(infoPannel);
+///////INFO PANNEL FIN/////////
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
 main.appendChild(sectionPimary);
@@ -105,7 +114,7 @@ for (let i = 0; i < h2Article.length; i++) {
           "Du" + " " + tabStart[i] + " " + "jusq'au" + " " + tabEnd[i]
         );
         infoDate.setAttribute("class", "info");
-        ctnrA.appendChild(infoDate);
+        infoPannel.appendChild(infoDate);
         infoDate.appendChild(infoDateTxt);
         return;
       }
