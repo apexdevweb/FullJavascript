@@ -34,13 +34,14 @@ for (let i = 0; i < namesOfLink.length; i++) {
 /////////////////////MAIN/////////////////////////
 const main = document.querySelector("main");
 ///////INFO PANNEL /////////
-let infoPannel = document.createElement("div");
-infoPannel.setAttribute("class", "infoForUser");
 let btnInfoPannel = document.createElement("button");
 btnInfoPannel.textContent = "View info";
 btnInfoPannel.setAttribute("class", "infoUserBtn");
+let infoPannel = document.createElement("div");
+infoPannel.setAttribute("class", "infoForUser");
 main.appendChild(btnInfoPannel);
 main.appendChild(infoPannel);
+
 ///////INFO PANNEL FIN/////////
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
@@ -110,10 +111,10 @@ for (let i = 0; i < h2Article.length; i++) {
       console.log("Dates de fin :", tabEnd);
       for (let i = 0; i < tabStart.length && tabEnd.length; i++) {
         let infoDate = document.createElement("p");
+        infoDate.setAttribute("class", "info");
         let infoDateTxt = document.createTextNode(
           "Du" + " " + tabStart[i] + " " + "jusq'au" + " " + tabEnd[i]
         );
-        infoDate.setAttribute("class", "info");
         infoPannel.appendChild(infoDate);
         infoDate.appendChild(infoDateTxt);
         return;

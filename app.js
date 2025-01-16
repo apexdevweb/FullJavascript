@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const dteInfoParams = document.querySelectorAll(".info");
   btnviewer.forEach((buttonView, index) => {
     const imgModif = imgStyleParams[index];
-    const paramsArtcl = artclStyleParams[index]; // Associe chaque bouton à sa carte correspondante
+    // Associe chaque bouton à sa carte correspondante
+    const paramsArtcl = artclStyleParams[index];
     const paramsBlck = blckAStyleParams[index];
     const dateContainer = dteCtnrParams[index];
     const dateInfoContainer = dteInfoParams[index];
