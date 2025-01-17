@@ -6,6 +6,12 @@ body {
   color: #000;
   font-family: "Playwrite AU SA", serif;
 }
+@media screen and (min-width: 425px) {
+}
+@media (min-width: 425px) and (max-width: 768px) {
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+}
 header,
 nav,
 ul {
@@ -58,6 +64,7 @@ h2 {
 li {
   list-style-type: none;
 }
+
 a {
   color: #000;
   font-size: 1.3rem;
@@ -88,6 +95,7 @@ a {
   height: auto;
   width: 100%;
   bottom: 0;
+  overflow: hidden;
 }
 .infoUserBtn:hover {
   cursor: pointer;
@@ -95,7 +103,7 @@ a {
   background-color: #000;
   color: burlywood;
 }
-.info_for_user {
+.infoForUser {
   display: none;
 }
 .mainContainer {
@@ -223,6 +231,7 @@ h4 {
   background-color: #fff;
   color: burlywood;
 }
+.levelContainer
 /*add js*/
 .modifArtcl {
   transition: background-color 1.5s ease;
@@ -273,8 +282,19 @@ input[type="submit"]:hover {
   background-color: #fff;
   color: burlywood;
 }
-
-/*expension add js*/
+.levelContainer {
+  height: 2vh;
+  width: 5vw;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+/* .jaugeGreen {
+}
+.jaugeOrange {
+}
+.jaugeRed {
+} */
+/******************expension add js******************************/
 .expensionModal {
   display: flex;
   flex-flow: row nowrap;
@@ -307,13 +327,12 @@ input[type="submit"]:hover {
   border-radius: 10px;
   z-index: 99;
   font-family: "Playwrite AU SA", serif;
-  width: 25vw;
+  width: 35vw;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
   margin-left: 5px;
-  transition: 0.5s ease-in-out;
 }
 /*expension du container*/
 @keyframes expandAnime {

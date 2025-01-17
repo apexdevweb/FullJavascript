@@ -69,4 +69,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-//mécanique bouttons pour l'expension
+// //mécanique bouttons pour l'expension

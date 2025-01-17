@@ -77,6 +77,8 @@ for (let i = 0; i < h2Article.length; i++) {
   let formDte = document.createElement("form");
   formDte.method = "GET";
   formDte.name = "dteFormValidate";
+  //on utilise l'index du tableaux pour nomé l'id de chaque formulaire
+  formDte.id = h2Article[i];
   formDte.setAttribute("class", "registerForm");
   dateContainer.appendChild(formDte);
   let dateStart = document.createElement("input");
@@ -98,30 +100,35 @@ for (let i = 0; i < h2Article.length; i++) {
   registerBtn.type = "submit";
   registerBtn.value = "Register";
   formDte.appendChild(registerBtn);
-  const tabStart = [];
-  const tabEnd = [];
   function dteRegister(event) {
     event.preventDefault();
-    let dteStrt = document.forms["dteFormValidate"]["dateDepart"].value.trim();
-    let dteEnd = document.forms["dteFormValidate"]["dateArrive"].value.trim();
-    if (dteStrt !== "" && dteEnd !== "") {
-      tabStart.push(dteStrt);
-      tabEnd.push(dteEnd);
-      console.log("Dates de début :", tabStart);
-      console.log("Dates de fin :", tabEnd);
-      for (let i = 0; i < tabStart.length && tabEnd.length; i++) {
-        let infoDate = document.createElement("p");
-        infoDate.setAttribute("class", "info");
-        let infoDateTxt = document.createTextNode(
-          "Du" + " " + tabStart[i] + " " + "jusq'au" + " " + tabEnd[i]
-        );
-        infoPannel.appendChild(infoDate);
-        infoDate.appendChild(infoDateTxt);
-        return;
+    let afficheDate = [];
+    const allforms = document.querySelectorAll(
+      "#Californie, #Thaïlande, #Cuba, #Hawaï"
+    );
+    allforms.forEach((form) => {
+      let dteStrt = form.querySelector("[name='dateDepart']").value.trim();
+      let dteEnd = form.querySelector("[name='dateArrive']").value.trim();
+      if (dteStrt !== "" && dteEnd !== "") {
+        let infoDateTxt = `Du ${dteStrt} jusqu'au ${dteEnd} pour ${form.id}`;
+        if (!afficheDate.includes(infoDateTxt)) {
+          let infoDate = document.createElement("p");
+          infoDate.setAttribute("class", "info");
+          infoDate.textContent = infoDateTxt;
+          let attendanceLvlCtnr = document.createElement("span");
+          attendanceLvlCtnr.setAttribute("class", "levelContainer");
+          attendanceLvlCtnr.textContent = "Niveau de fréquentation";
+          infoDate.appendChild(attendanceLvlCtnr);
+          afficheDate.push(infoDateTxt);
+          infoPannel.appendChild(infoDate);
+        }
+      } else if (dteStrt === "" && dteEnd === "") {
+        alert("Veuillez remplir les deux dates !");
       }
-    } else {
-      alert("Veuillez remplir les deux dates !");
-    }
+      form.querySelector("[name='dateDepart']").value = "";
+      form.querySelector("[name='dateArrive']").value = "";
+    });
+    return;
   }
   formDte.addEventListener("submit", dteRegister);
   let btnView = document.createElement("button");
