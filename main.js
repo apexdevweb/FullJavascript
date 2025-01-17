@@ -117,7 +117,32 @@ for (let i = 0; i < h2Article.length; i++) {
           infoDate.textContent = infoDateTxt;
           let attendanceLvlCtnr = document.createElement("span");
           attendanceLvlCtnr.setAttribute("class", "levelContainer");
+          //date a paramètré...
+          let attendanceAverage = [
+            "peu fréquenter",
+            "moyenement fréquenter",
+            "très fréquenter",
+          ];
           attendanceLvlCtnr.textContent = "Niveau de fréquentation";
+          for (let i = 0; i < attendanceAverage.length; i++) {
+            let attendanceMeter = document.createElement("strong");
+            attendanceMeter.setAttribute("class", "levelBarre");
+            switch (attendanceAverage[i]) {
+              case "peu fréquenter":
+                attendanceMeter.classList.add("jaugeGreen");
+                break;
+              case "moyenement fréquenter":
+                attendanceMeter.classList.add("jaugeOrange");
+                break;
+              case "très fréquenter":
+                attendanceMeter.classList.add("jaugeRed");
+                break;
+              default:
+                break;
+            }
+
+            attendanceLvlCtnr.appendChild(attendanceMeter);
+          }
           infoDate.appendChild(attendanceLvlCtnr);
           afficheDate.push(infoDateTxt);
           infoPannel.appendChild(infoDate);

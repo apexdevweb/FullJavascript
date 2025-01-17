@@ -283,17 +283,34 @@ input[type="submit"]:hover {
   color: burlywood;
 }
 .levelContainer {
-  height: 2vh;
-  width: 5vw;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-size: 14px;
+  height: 5vh;
+  width: 8vw;
   border: 1px solid #fff;
   border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* .jaugeGreen {
+
+.levelBarre {
+  height: 3vh;
+  width: 25px;
+  margin: 0;
+  background-color: aqua;
+  border-radius: 10px;
+}
+.jaugeGreen {
+  background-color: rgb(107, 212, 33);
 }
 .jaugeOrange {
+  background-color: coral;
 }
 .jaugeRed {
-} */
+  background-color: crimson;
+}
 /******************expension add js******************************/
 .expensionModal {
   display: flex;
