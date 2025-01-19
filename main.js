@@ -46,7 +46,16 @@ main.appendChild(infoPannel);
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
 main.appendChild(sectionPimary);
-const h2Article = ["Californie", "Thaïlande", "Cuba", "Hawaï"];
+const h2Article = [
+  "Californie",
+  "Thaïlande",
+  "Cuba",
+  "Hawaï",
+  "côte d'azure",
+  "Italie",
+  "Espagne",
+  "Grèce",
+];
 for (let i = 0; i < h2Article.length; i++) {
   let articleMain = document.createElement("article");
   articleMain.setAttribute("class", "carte");
@@ -104,7 +113,7 @@ for (let i = 0; i < h2Article.length; i++) {
     event.preventDefault();
     let afficheDate = [];
     const allforms = document.querySelectorAll(
-      "#Californie, #Thaïlande, #Cuba, #Hawaï"
+      "#Californie, #Thaïlande, #Cuba, #Hawaï , #côte d'azure,#Italie,#Espagne,#Grèce"
     );
     allforms.forEach((form) => {
       let dteStrt = form.querySelector("[name='dateDepart']").value.trim();
@@ -168,6 +177,10 @@ for (let i = 0; i < h2Article.length; i++) {
     "image/papper2.jpg",
     "image/papper3.jpg",
     "image/papper4.jpg",
+    "image/saint-maximeA.webp",
+    "image/italie.jpg",
+    "image/espagne.jpg",
+    "image/grèce.jpg",
   ];
   let imgFig = document.createElement("img");
   imgFig.src = imgTab[i];
