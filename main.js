@@ -126,6 +126,7 @@ for (let i = 0; i < h2Article.length; i++) {
     allforms.forEach((form) => {
       let dteStrt = form.querySelector("[name='dateDepart']").value.trim();
       let dteEnd = form.querySelector("[name='dateArrive']").value.trim();
+      console.log(dteStrt, dteEnd);
 
       if (dteStrt === "" || dteEnd === "") {
         // alert("Veuillez remplir les deux dates !");
@@ -146,27 +147,20 @@ for (let i = 0; i < h2Article.length; i++) {
         let attendanceLvlCtnr = document.createElement("span");
         attendanceLvlCtnr.setAttribute("class", "levelContainer");
 
-        let attendanceAverage = [
-          "peu fréquenter",
-          "moyenement fréquenter",
-          "très fréquenter",
-        ];
         attendanceLvlCtnr.textContent = "Niveau de fréquentation";
         let attendanceMeter = document.createElement("i");
         attendanceMeter.setAttribute("class", "fa-solid fa-chart-simple");
-        attendanceAverage.forEach((level) => {
-          if (level === "peu fréquenter") {
-            attendanceMeter.classList.add("greenStat");
-            attendanceLvlCtnr.textContent = "peu fréquenter";
-          } else if (level === "moyenement fréquenter") {
-            attendanceLvlCtnr.textContent = "moyenement fréquenter";
-            // attendanceMeter.classList.add("jaugeOrange");
-          } else if (level === "très fréquenter") {
-            attendanceLvlCtnr.textContent = "très fréquenter";
-            // attendanceMeter.classList.add("jaugeRed");
-          }
-          attendanceLvlCtnr.appendChild(attendanceMeter);
-        });
+        if (dteStrt >= "2025-01-01" && dteEnd <= "2025-04-30") {
+          attendanceMeter.classList.add("greenStat");
+          attendanceLvlCtnr.textContent = "peu fréquenter";
+        } else if (dteStrt >= "2025-05-01" && dteEnd <= "2025-08-31") {
+          attendanceLvlCtnr.textContent = "très fréquenter";
+          attendanceMeter.classList.add("redStat");
+        } else if (dteStrt >= "2025-09-01" && dteEnd <= "2025-12-31") {
+          attendanceLvlCtnr.textContent = "moyenement fréquenter";
+          attendanceMeter.classList.add("orangeStat");
+        }
+        attendanceLvlCtnr.appendChild(attendanceMeter);
 
         infoDate.appendChild(attendanceLvlCtnr);
         afficheDate.push(infoDateTxt);
