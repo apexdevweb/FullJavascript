@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   //liens nav
-  const linksNav = document.querySelectorAll("li");
+  const linksNav = document.querySelectorAll("a");
   linksNav.forEach((liens) => {
     liens.addEventListener("mouseover", () => {
       liens.style.transition = "0.3s ease";

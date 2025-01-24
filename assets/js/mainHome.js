@@ -1,59 +1,38 @@
 //body
 const tagBody = document.querySelector("body");
-/////////////////////HEADER & NAV/////////////////////////
-const tagHeader = document.querySelector("header");
-let tagH1 = document.createElement("h1");
-let h1Txt = document.createTextNode("Full Javascript website");
-tagHeader.appendChild(tagH1);
-let vidBg = document.createElement("video");
-vidBg.src = "image/vidTwo.mp4";
-vidBg.controls = false;
-vidBg.autoplay = true;
-vidBg.loop = true;
-vidBg.muted = true;
-vidBg.setAttribute("class", "headerVid");
-tagHeader.appendChild(vidBg);
-tagH1.appendChild(h1Txt);
-let tagNav = document.createElement("nav");
-tagHeader.appendChild(tagNav);
-let tagUl = document.createElement("ul");
-tagNav.appendChild(tagUl);
-const namesOfLink = ["Home", "Gallery", "Contact"];
-for (let i = 0; i < namesOfLink.length; i++) {
-  let tagLi = document.createElement("li");
-
-  tagUl.appendChild(tagLi);
-  let tagLink = document.createElement("a");
-  tagLink.href = `#page${i + 1}`;
-
-  let linkTxt = document.createTextNode(namesOfLink[i]);
-  tagLi.appendChild(tagLink);
-  tagLink.appendChild(linkTxt);
-}
-/////////////////////HEADER & NAV FIN/////////////////////////
-/////////////////////MAIN/////////////////////////
+/////////////////////MAIN HOME/////////////////////////
 const main = document.querySelector("main");
+let sectionHome = document.createElement("section");
+let sectionHotel = document.createElement("section");
+let sectionContact = document.createElement("section");
+sectionHome.setAttribute("class", "SecHome");
+sectionHotel.setAttribute("class", "SecHotel");
+sectionContact.setAttribute("class", "SecContact");
+main.appendChild(sectionHome);
+main.appendChild(sectionHotel);
+main.appendChild(sectionContact);
 ///////INFO PANNEL /////////
 let btnInfoPannel = document.createElement("button");
 btnInfoPannel.textContent = "View info";
 btnInfoPannel.setAttribute("class", "infoUserBtn");
 let infoPannel = document.createElement("div");
 infoPannel.setAttribute("class", "infoForUser");
-main.appendChild(btnInfoPannel);
-main.appendChild(infoPannel);
+sectionHome.appendChild(btnInfoPannel);
+sectionHome.appendChild(infoPannel);
 ///////INFO PANNEL FIN/////////
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
-main.appendChild(sectionPimary);
+sectionHome.appendChild(sectionPimary);
+
 const h2Article = [
   "Californie",
-  "Thaïlande",
+  "Thailande",
   "Cuba",
-  "Hawaï",
-  "Côte-azure",
+  "Hawai",
+  "Cote-azure",
   "Italie",
   "Espagne",
-  "Grèce",
+  "Grece",
 ];
 for (let i = 0; i < h2Article.length; i++) {
   let articleMain = document.createElement("article");
@@ -134,7 +113,7 @@ for (let i = 0; i < h2Article.length; i++) {
       }
 
       if (isNaN(Date.parse(dteStrt)) || isNaN(Date.parse(dteEnd))) {
-        alert("Veuillez entrer des dates valides !");
+        // alert("Veuillez entrer des dates valides !");
         return;
       }
 
@@ -147,7 +126,7 @@ for (let i = 0; i < h2Article.length; i++) {
         let attendanceLvlCtnr = document.createElement("span");
         attendanceLvlCtnr.setAttribute("class", "levelContainer");
 
-        attendanceLvlCtnr.textContent = "Niveau de fréquentation";
+        attendanceLvlCtnr.textContent = "Niveau de fréquentation inconnu";
         let attendanceMeter = document.createElement("i");
         attendanceMeter.setAttribute("class", "fa-solid fa-chart-simple");
         if (dteStrt >= "2025-01-01" && dteEnd <= "2025-04-30") {
@@ -181,14 +160,14 @@ for (let i = 0; i < h2Article.length; i++) {
   let figureMain = document.createElement("figure");
   ctnrB.appendChild(figureMain);
   const imgTab = [
-    "image/papper1.jpg",
-    "image/papper2.jpg",
-    "image/papper3.jpg",
-    "image/papper4.jpg",
-    "image/saint-maximeA.webp",
-    "image/italie.jpg",
-    "image/espagne.jpg",
-    "image/grèce.jpg",
+    "assets/image/papper1.jpg",
+    "assets/image/papper2.jpg",
+    "assets/image/papper3.jpg",
+    "assets/image/papper4.jpg",
+    "assets/image/saint-maximeA.webp",
+    "assets/image/italie.jpg",
+    "assets/image/espagne.jpg",
+    "assets/image/grece.jpg",
   ];
   let imgFig = document.createElement("img");
   imgFig.src = imgTab[i];
@@ -199,24 +178,3 @@ for (let i = 0; i < h2Article.length; i++) {
   captionFig.appendChild(captionTxt);
   figureMain.appendChild(captionFig);
 }
-/////////////////////MAIN FIN/////////////////////////
-///FOOTER////
-const tagFoot = document.querySelector("footer");
-let vidBgFoot = document.createElement("video");
-vidBgFoot.src = "image/vidOne.mp4";
-vidBgFoot.controls = false;
-vidBgFoot.autoplay = true;
-vidBgFoot.loop = true;
-vidBgFoot.muted = true;
-vidBgFoot.setAttribute("class", "footVid");
-tagFoot.appendChild(vidBgFoot);
-let signature = document.createElement("h4");
-let signTxt = document.createTextNode("©Script'enjoyer 2025");
-signature.appendChild(signTxt);
-tagFoot.appendChild(signature);
-let today = new Date();
-let smalldate = document.createElement("small");
-let dateInfo = document.createTextNode(today);
-smalldate.appendChild(dateInfo);
-tagFoot.appendChild(smalldate);
-///FOOTER FIN////

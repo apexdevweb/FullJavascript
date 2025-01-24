@@ -1,0 +1,18 @@
+const tagFoot = document.querySelector("footer");
+let vidBgFoot = document.createElement("video");
+vidBgFoot.src = "assets/image/vidOne.mp4";
+vidBgFoot.controls = false;
+vidBgFoot.autoplay = true;
+vidBgFoot.loop = true;
+vidBgFoot.muted = true;
+vidBgFoot.setAttribute("class", "footVid");
+tagFoot.appendChild(vidBgFoot);
+let signature = document.createElement("h4");
+let signTxt = document.createTextNode("©Script'enjoyer 2025");
+signature.appendChild(signTxt);
+tagFoot.appendChild(signature);
+let today = new Date();
+let smalldate = document.createElement("small");
+let dateInfo = document.createTextNode(today);
+smalldate.appendChild(dateInfo);
+tagFoot.appendChild(smalldate);
