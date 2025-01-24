@@ -41,7 +41,6 @@ let infoPannel = document.createElement("div");
 infoPannel.setAttribute("class", "infoForUser");
 main.appendChild(btnInfoPannel);
 main.appendChild(infoPannel);
-
 ///////INFO PANNEL FIN/////////
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
@@ -51,7 +50,7 @@ const h2Article = [
   "Thaïlande",
   "Cuba",
   "Hawaï",
-  "côte d'azure",
+  "Côte-azure",
   "Italie",
   "Espagne",
   "Grèce",
@@ -94,8 +93,8 @@ for (let i = 0; i < h2Article.length; i++) {
   dateStart.type = "date";
   dateStart.name = "dateDepart";
   dateStart.setAttribute("class", "depart");
-  let txtStart = document.createTextNode("Date de départ");
-  let txtEnd = document.createTextNode("Date d'arrivée");
+  let txtStart = document.createTextNode("Date d'arrivée");
+  let txtEnd = document.createTextNode("Date de départ");
   const txtTab = [txtStart, txtEnd];
   formDte.appendChild(txtTab[0]);
   formDte.appendChild(dateStart);
@@ -111,59 +110,74 @@ for (let i = 0; i < h2Article.length; i++) {
   formDte.appendChild(registerBtn);
   function dteRegister(event) {
     event.preventDefault();
+
+    // Sélectionner l'élément contenant les informations
+    const infoPannel = document.querySelector(".infoForUser");
+    if (!infoPannel) {
+      console.error("L'élément infoForUser est introuvable !");
+      return;
+    }
+
     let afficheDate = [];
     const allforms = document.querySelectorAll(
-      "#Californie, #Thaïlande, #Cuba, #Hawaï , #côte d'azure,#Italie,#Espagne,#Grèce"
+      "#Californie, #Thaïlande, #Cuba, #Hawaï, #Côte-azure, #Italie, #Espagne, #Grèce"
     );
+
     allforms.forEach((form) => {
       let dteStrt = form.querySelector("[name='dateDepart']").value.trim();
       let dteEnd = form.querySelector("[name='dateArrive']").value.trim();
-      if (dteStrt !== "" && dteEnd !== "") {
-        let infoDateTxt = `Du ${dteStrt} jusqu'au ${dteEnd} pour ${form.id}`;
-        if (!afficheDate.includes(infoDateTxt)) {
-          let infoDate = document.createElement("p");
-          infoDate.setAttribute("class", "info");
-          infoDate.textContent = infoDateTxt;
-          let attendanceLvlCtnr = document.createElement("span");
-          attendanceLvlCtnr.setAttribute("class", "levelContainer");
-          //date a paramètré...
-          let attendanceAverage = [
-            "peu fréquenter",
-            "moyenement fréquenter",
-            "très fréquenter",
-          ];
-          attendanceLvlCtnr.textContent = "Niveau de fréquentation";
-          for (let i = 0; i < attendanceAverage.length; i++) {
-            let attendanceMeter = document.createElement("strong");
-            attendanceMeter.setAttribute("class", "levelBarre");
-            switch (attendanceAverage[i]) {
-              case "peu fréquenter":
-                attendanceMeter.classList.add("jaugeGreen");
-                break;
-              case "moyenement fréquenter":
-                attendanceMeter.classList.add("jaugeOrange");
-                break;
-              case "très fréquenter":
-                attendanceMeter.classList.add("jaugeRed");
-                break;
-              default:
-                break;
-            }
 
-            attendanceLvlCtnr.appendChild(attendanceMeter);
-          }
-          infoDate.appendChild(attendanceLvlCtnr);
-          afficheDate.push(infoDateTxt);
-          infoPannel.appendChild(infoDate);
-        }
-      } else if (dteStrt === "" && dteEnd === "") {
-        alert("Veuillez remplir les deux dates !");
+      if (dteStrt === "" || dteEnd === "") {
+        // alert("Veuillez remplir les deux dates !");
+        return;
       }
+
+      if (isNaN(Date.parse(dteStrt)) || isNaN(Date.parse(dteEnd))) {
+        alert("Veuillez entrer des dates valides !");
+        return;
+      }
+
+      let infoDateTxt = `Du ${dteStrt} jusqu'au ${dteEnd} pour ${form.id}`;
+      if (!afficheDate.includes(infoDateTxt)) {
+        let infoDate = document.createElement("p");
+        infoDate.setAttribute("class", "info");
+        infoDate.textContent = infoDateTxt;
+
+        let attendanceLvlCtnr = document.createElement("span");
+        attendanceLvlCtnr.setAttribute("class", "levelContainer");
+
+        let attendanceAverage = [
+          "peu fréquenter",
+          "moyenement fréquenter",
+          "très fréquenter",
+        ];
+        attendanceLvlCtnr.textContent = "Niveau de fréquentation";
+        let attendanceMeter = document.createElement("i");
+        attendanceMeter.setAttribute("class", "fa-solid fa-chart-simple");
+        attendanceAverage.forEach((level) => {
+          if (level === "peu fréquenter") {
+            attendanceMeter.classList.add("greenStat");
+            attendanceLvlCtnr.textContent = "peu fréquenter";
+          } else if (level === "moyenement fréquenter") {
+            attendanceLvlCtnr.textContent = "moyenement fréquenter";
+            // attendanceMeter.classList.add("jaugeOrange");
+          } else if (level === "très fréquenter") {
+            attendanceLvlCtnr.textContent = "très fréquenter";
+            // attendanceMeter.classList.add("jaugeRed");
+          }
+          attendanceLvlCtnr.appendChild(attendanceMeter);
+        });
+
+        infoDate.appendChild(attendanceLvlCtnr);
+        afficheDate.push(infoDateTxt);
+        infoPannel.appendChild(infoDate);
+      }
+
       form.querySelector("[name='dateDepart']").value = "";
       form.querySelector("[name='dateArrive']").value = "";
     });
-    return;
   }
+
   formDte.addEventListener("submit", dteRegister);
   let btnView = document.createElement("button");
   btnView.setAttribute("class", "btnV");

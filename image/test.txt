@@ -1,41 +1,56 @@
-// const container = document.getElementById("divTP1");
-//       let strng = document.createElement("strong");
-//       let strngTxt = document.createTextNode("World Wide Web Consortium");
-//       container.appendChild(strng);
-//       strng.appendChild(strngTxt);
-//       let link = document.createElement("a");
-//       link.id = "liens";
-//       link.href = "index.html";
-//       let linkTxt = document.createTextNode("Retour à l'index");
-//       container.appendChild(link).innerHTML = "<br>".repeat(2);
-//       link.appendChild(linkTxt);
-//       let linkClone = link.cloneNode(true);
-//       linkClone.setAttribute("class", "clnLink");
-//       container.appendChild(linkClone);
-//       let MyLinks = [link, linkClone];
-//       MyLinks.forEach((lkns) => {
-//         lkns.addEventListener("mouseover", () => {
-//           lkns.style.textDecoration = "underline";
-//         });
-//         lkns.addEventListener("mouseout", () => {
-//           lkns.style.textDecoration = "none";
-//         });
-//       });
+  // function dteRegister(event) {
+  //   event.preventDefault();
+  //   let afficheDate = [];
+  //   const allforms = document.querySelectorAll(
+  //     "#Californie, #Thaïlande, #Cuba, #Hawaï , #côte d'azure, #Italie, #Espagne, #Grèce"
+  //   );
+  //   allforms.forEach((form) => {
+  //     let dteStrt = form.querySelector("[name='dateDepart']").value.trim();
+  //     let dteEnd = form.querySelector("[name='dateArrive']").value.trim();
+  //     if (dteStrt !== "" && dteEnd !== "") {
+  //       let infoDateTxt = `Du ${dteStrt} jusqu'au ${dteEnd} pour ${form.id}`;
+  //       if (!afficheDate.includes(infoDateTxt)) {
+  //         let infoDate = document.createElement("p");
+  //         infoDate.setAttribute("class", "info");
+  //         infoDate.textContent = infoDateTxt;
+  //         let attendanceLvlCtnr = document.createElement("span");
+  //         attendanceLvlCtnr.setAttribute("class", "levelContainer");
+  //         //date a paramètré...
+  //         let attendanceAverage = [
+  //           "peu fréquenter",
+  //           "moyenement fréquenter",
+  //           "très fréquenter",
+  //         ];
+  //         attendanceLvlCtnr.textContent = "Niveau de fréquentation";
+  //         for (let i = 0; i < attendanceAverage.length; i++) {
+  //           let attendanceMeter = document.createElement("strong");
+  //           attendanceMeter.setAttribute("class", "levelBarre");
+  //           switch (attendanceAverage[i]) {
+  //             case "peu fréquenter":
+  //               attendanceMeter.classList.add("jaugeGreen");
+  //               break;
+  //             case "moyenement fréquenter":
+  //               attendanceMeter.classList.add("jaugeOrange");
+  //               break;
+  //             case "très fréquenter":
+  //               attendanceMeter.classList.add("jaugeRed");
+  //               break;
+  //             default:
+  //               break;
+  //           }
 
-//       let para = document.createElement("p");
-//       para.setAttribute("class","myPara");
-//       container.appendChild(para);
-//       let paraTxt =  document.createTextNode("à but non-lucratif chargé de promouvoir la compatibilité des technologies du");
-//       para.appendChild(paraTxt);
-
-//       let remplacement = () =>{
-//         let remplace = document.createTextNode("Remplacer!!! a but lucratif");
-//         paraTxt.replaceWith(remplace);
-//       };
-
-//       let btn = document.createElement("button");
-//       btn.setAttribute("id","Remplacer");
-//       btn.textContent = "Remplacer";
-//       container.appendChild(btn);
-//       btn.onclick = remplacement();
-//       console.log(btn);
+  //           attendanceLvlCtnr.appendChild(attendanceMeter);
+  //         }
+  //         infoDate.appendChild(attendanceLvlCtnr);
+  //         afficheDate.push(infoDateTxt);
+  //         infoPannel.appendChild(infoDate);
+  //       }
+  //     } else if (dteStrt === "" && dteEnd === "") {
+  //       alert("Veuillez remplir les deux dates !");
+  //     }
+  //     form.querySelector("[name='dateDepart']").value = "";
+  //     form.querySelector("[name='dateArrive']").value = "";
+  //   });
+  //   return;
+  // }
+  // formDte.addEventListener("submit", dteRegister);

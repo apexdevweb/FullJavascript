@@ -285,32 +285,47 @@ input[type="submit"]:hover {
 .levelContainer {
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-around;
   font-size: 14px;
   height: 5vh;
   width: 8vw;
+  padding: 5px;
   border: 1px solid #fff;
   border-radius: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.greenStat {
+  font-size: 2.5rem;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(5, 255, 0, 1) 22%
+  );
+  background-clip: text;
+}
+.orangeStat {
+  font-size: 2.5rem;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 162, 0, 1) 22%
+  );
+  background-clip: text;
+}
+.redStat {
+  font-size: 2.5rem;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 0, 0, 1) 22%
+  );
+  background-clip: text;
+}
 
-.levelBarre {
-  height: 3vh;
-  width: 25px;
-  margin: 0;
-  background-color: aqua;
-  border-radius: 10px;
-}
-.jaugeGreen {
-  background-color: rgb(107, 212, 33);
-}
-.jaugeOrange {
-  background-color: coral;
-}
-.jaugeRed {
-  background-color: crimson;
-}
 /******************expension add js******************************/
 .expensionModal {
   display: flex;
