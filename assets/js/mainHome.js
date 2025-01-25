@@ -3,14 +3,8 @@ const tagBody = document.querySelector("body");
 /////////////////////MAIN HOME/////////////////////////
 const main = document.querySelector("main");
 let sectionHome = document.createElement("section");
-let sectionHotel = document.createElement("section");
-let sectionContact = document.createElement("section");
 sectionHome.setAttribute("class", "SecHome");
-sectionHotel.setAttribute("class", "SecHotel");
-sectionContact.setAttribute("class", "SecContact");
 main.appendChild(sectionHome);
-main.appendChild(sectionHotel);
-main.appendChild(sectionContact);
 ///////INFO PANNEL /////////
 let btnInfoPannel = document.createElement("button");
 btnInfoPannel.textContent = "View info";
@@ -23,7 +17,6 @@ sectionHome.appendChild(infoPannel);
 let sectionPimary = document.createElement("section");
 sectionPimary.setAttribute("class", "mainContainer");
 sectionHome.appendChild(sectionPimary);
-
 const h2Article = [
   "Californie",
   "Thailande",
@@ -99,7 +92,7 @@ for (let i = 0; i < h2Article.length; i++) {
 
     let afficheDate = [];
     const allforms = document.querySelectorAll(
-      "#Californie, #Thaïlande, #Cuba, #Hawaï, #Côte-azure, #Italie, #Espagne, #Grèce"
+      "#Californie, #Thailande, #Cuba, #Hawai, #Cote-azure, #Italie, #Espagne, #Grece"
     );
 
     allforms.forEach((form) => {
@@ -126,17 +119,17 @@ for (let i = 0; i < h2Article.length; i++) {
         let attendanceLvlCtnr = document.createElement("span");
         attendanceLvlCtnr.setAttribute("class", "levelContainer");
 
-        attendanceLvlCtnr.textContent = "Niveau de fréquentation inconnu";
+        attendanceLvlCtnr.textContent = "Niveau de frequentation inconnu";
         let attendanceMeter = document.createElement("i");
         attendanceMeter.setAttribute("class", "fa-solid fa-chart-simple");
         if (dteStrt >= "2025-01-01" && dteEnd <= "2025-04-30") {
           attendanceMeter.classList.add("greenStat");
-          attendanceLvlCtnr.textContent = "peu fréquenter";
+          attendanceLvlCtnr.textContent = "peu frequenter";
         } else if (dteStrt >= "2025-05-01" && dteEnd <= "2025-08-31") {
-          attendanceLvlCtnr.textContent = "très fréquenter";
+          attendanceLvlCtnr.textContent = "tres frequenter";
           attendanceMeter.classList.add("redStat");
         } else if (dteStrt >= "2025-09-01" && dteEnd <= "2025-12-31") {
-          attendanceLvlCtnr.textContent = "moyenement fréquenter";
+          attendanceLvlCtnr.textContent = "moyenement frequenter";
           attendanceMeter.classList.add("orangeStat");
         }
         attendanceLvlCtnr.appendChild(attendanceMeter);

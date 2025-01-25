@@ -97,6 +97,13 @@ a {
   bottom: 0;
   overflow: hidden;
 }
+.secHome,
+.secHotel,
+.secContact {
+  height: auto;
+  width: 100%;
+}
+
 .infoUserBtn:hover {
   cursor: pointer;
   transition: background-color 1s ease;
