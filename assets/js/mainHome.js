@@ -35,6 +35,7 @@ for (let i = 0; i < h2Article.length; i++) {
   ctnrA.setAttribute("class", "blckA");
   articleMain.appendChild(ctnrA);
   let separ = document.createElement("hr");
+  separ.setAttribute("class", "cardSepar");
   articleMain.appendChild(separ);
   let ctnrB = document.createElement("div");
   ctnrB.setAttribute("class", "blckB");
