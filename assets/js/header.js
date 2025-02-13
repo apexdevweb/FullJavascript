@@ -15,7 +15,7 @@ let tagNav = document.createElement("nav");
 tagHeader.appendChild(tagNav);
 let tagUl = document.createElement("ul");
 tagNav.appendChild(tagUl);
-const namesOfLink = ["Home", "Hostel", "Contact"];
+const namesOfLink = ["Home", "Hostel", "Help"];
 
 for (let i = 0; i < namesOfLink.length; i++) {
   let tagLi = document.createElement("li");
